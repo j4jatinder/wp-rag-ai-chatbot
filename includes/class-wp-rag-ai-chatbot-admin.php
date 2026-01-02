@@ -106,8 +106,8 @@ class WP_RAG_AI_Chatbot_Admin {
 public function add_admin_menu() {
     // Add top-level menu item (Settings Page)
     add_menu_page(
-        __( 'WP AI Chatbot Settings', 'ai-chatbot-for-support-ecommerce' ),
-        __( 'WP AI Chatbot', 'ai-chatbot-for-support-ecommerce' ),
+        __( 'AI Chatbot Settings', 'ai-chatbot-for-support-ecommerce' ),
+        __( 'AI Chatbot', 'ai-chatbot-for-support-ecommerce' ),
         'manage_options',
         'wp-rag-ai-chatbot-settings', // The parent slug
         array( $this, 'settings_page_html' ),
@@ -202,7 +202,7 @@ public function register_faq_cpt() {
         // Define a settings section
         add_settings_section(
             'wp_rag_ai_chatbot_main_section',
-            __( 'WP AI Chatbot Settings', 'ai-chatbot-for-support-ecommerce' ),
+            __( 'AI Chatbot Display & Behavior', 'ai-chatbot-for-support-ecommerce' ),
             array( $this, 'main_settings_section_callback' ),
             'wp-rag-ai-chatbot-settings'
         );
@@ -523,7 +523,7 @@ public function wp_rag_ai_chatbot_show_domain_notice() {
     }
 
     echo '<div class="notice notice-info is-dismissible wp-rag-ai-chatbot-domain-notice">';
-    echo '<p><strong>' . esc_html__( 'WP AI Chatbot', 'ai-chatbot-for-support-ecommerce' ) . '</strong></p>';
+    echo '<p><strong>' . esc_html__( 'AI Chatbot', 'ai-chatbot-for-support-ecommerce' ) . '</strong></p>';
     echo '<p>' . esc_html__(
         'This plugin requires a publicly accessible HTTPS domain. Localhost and local development environments are not supported.',
         'ai-chatbot-for-support-ecommerce'

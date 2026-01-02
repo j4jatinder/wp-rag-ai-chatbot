@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 ?>
 <div class="wrap">
-    <h1><?php esc_html_e( 'Chatbot Display & Behavior', 'ai-chatbot-for-support-ecommerce' ); ?></h1>
+    <h1><?php esc_html_e( 'AI Chatbot for Support & E-Commerce', 'ai-chatbot-for-support-ecommerce' ); ?></h1>
 
     <div id="rag-admin-message" class="notice" style="display:none;">
         <p></p>
@@ -116,7 +116,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
         <tr>
             <th scope="row"><label for="gemini_model">Gemini Model</label></th>
             <td>
-                <?php $gemini_model = get_option( 'wp_rag_ai_chatbot_gemini_model', 'gemini-2.5-flash-preview-09-2025' ); ?>
+                <?php $gemini_model = get_option( 'wp_rag_ai_chatbot_gemini_model', 'gemini-2.5-flash-lite' ); ?>
                 <input type="text" id="gemini_model" value="<?php echo esc_attr( $gemini_model ); ?>" class="regular-text" placeholder="gemini-2.5-flash-lite" />
                 <p class="description"><?php esc_html_e( 'Specify the Gemini model to use (e.g., gemini-2.5-flash-lite).', 'ai-chatbot-for-support-ecommerce' ); ?></p>
             </td>
