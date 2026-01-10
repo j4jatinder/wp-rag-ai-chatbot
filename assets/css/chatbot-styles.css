@@ -71,6 +71,40 @@
     transition: all 0.3s ease-in-out;
 }
 
+/* Chatbot Header/Title - Ensure high contrast */
+.acsec-chatbot-header,
+.acsec-chatbot-content header,
+[class*="chatbot-header"] {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+    padding: 16px;
+    border-radius: 10px 10px 0 0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.acsec-chatbot-header h2,
+.acsec-chatbot-content header h2,
+[class*="chatbot-header"] h2 {
+    color: #ffffff !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* Chatbot Title Text - Strong contrast */
+.acsec-chatbot-title {
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Force all header text to white */
+.acsec-chatbot-header *,
+.acsec-chatbot-content header *,
+[class*="chatbot-header"] * {
+    color: #ffffff !important;
+}
+
 /* Close button */
 .acsec-chatbot-close {
     position: absolute;
@@ -80,8 +114,47 @@
     border: none;
     font-size: 28px;
     cursor: pointer;
-    color: #333;
+    color: #ffffff !important;
     z-index: 10;
+    padding: 5px;
+}
+
+/* Textarea and input fields - High contrast */
+.acsec-chatbot-textarea,
+.acsec-chatbot-input,
+textarea[class*="acsec"],
+input[class*="acsec"],
+#acsec-chatbot-app input,
+#acsec-chatbot-app textarea {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+    border: 1px solid #d1d5db !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+    font-family: inherit;
+    border-radius: 6px;
+}
+
+.acsec-chatbot-textarea:focus,
+.acsec-chatbot-input:focus,
+textarea[class*="acsec"]:focus,
+input[class*="acsec"]:focus,
+#acsec-chatbot-app input:focus,
+#acsec-chatbot-app textarea:focus {
+    outline: none;
+    border-color: #4f46e5 !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Placeholder text - Better visibility */
+.acsec-chatbot-textarea::placeholder,
+.acsec-chatbot-input::placeholder,
+textarea[class*="acsec"]::placeholder,
+input[class*="acsec"]::placeholder,
+#acsec-chatbot-app input::placeholder,
+#acsec-chatbot-app textarea::placeholder {
+    color: #9ca3af !important;
+    opacity: 1;
 }
 
 /* Chat area */
@@ -89,4 +162,301 @@
     flex: 1;
     height: 100%;
     overflow: hidden;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+/* Chat root container - full width on mobile */
+#acsec-chatbot-root {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #ffffff !important;
+}
+
+#acsec-chatbot-root > div {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Message container - Light background */
+.acsec-messages-container,
+.acsec-chatbot-messages,
+[class*="messages"],
+#acsec-chatbot-app > div,
+#acsec-chatbot-app [class*="message"] {
+    background-color: #ffffff !important;
+}
+
+/* Override Tailwind dark mode - force light theme */
+.dark\:bg-gray-900,
+.dark\:bg-gray-800,
+.dark\:bg-gray-700 {
+    background-color: #ffffff !important;
+}
+
+.dark\:text-gray-200 {
+    color: #333333 !important;
+}
+
+/* User message box - Indigo background with white text */
+.flex.mb-4.justify-end {
+    display: flex !important;
+    margin-bottom: 1rem !important;
+    justify-content: flex-end !important;
+}
+
+.flex.mb-4.justify-end > div:not([class*="rounded-full"]),
+.flex.mb-4.justify-end > .max-w-xs,
+.flex.mb-4.justify-end > .max-w-md,
+.flex.mb-4.justify-end > .max-w-lg {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+}
+
+.flex.mb-4.justify-end p,
+.flex.mb-4.justify-end span,
+.flex.mb-4.justify-end div {
+    color: #ffffff !important;
+}
+
+/* Bot/AI message box - Light gray with dark text */
+.flex.mb-4.justify-start {
+    display: flex !important;
+    margin-bottom: 1rem !important;
+    justify-content: flex-start !important;
+}
+
+.flex.mb-4.justify-start > div:not([class*="rounded-full"]),
+.flex.mb-4.justify-start > .max-w-xs,
+.flex.mb-4.justify-start > .max-w-md,
+.flex.mb-4.justify-start > .max-w-lg {
+    background-color: #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+.flex.mb-4.justify-start p,
+.flex.mb-4.justify-start span,
+.flex.mb-4.justify-start div {
+    color: #1f2937 !important;
+}
+
+/* Override bg-gray-200 for bot messages */
+.bg-gray-200 {
+    background-color: #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+.bg-gray-200 * {
+    color: #1f2937 !important;
+}
+
+/* Override bg-indigo-600 for user messages */
+.bg-indigo-600 {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+}
+
+.bg-indigo-600 * {
+    color: #ffffff !important;
+}
+
+/* Override text colors inside messages */
+.text-gray-800 {
+    color: #1f2937 !important;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+/* Message wrapper - Clean background */
+.acsec-message-wrapper,
+[class*="message-wrapper"],
+#acsec-chatbot-app [class*="wrapper"] {
+    background-color: #ffffff !important;
+}
+
+/* Scrollable messages area */
+.acsec-messages-scroll,
+.acsec-chatbot-scroll,
+[class*="scroll"],
+main {
+    background-color: #ffffff !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px 8px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Modal content adjustments for mobile */
+    .acsec-chatbot-content {
+        width: 100% !important;
+        height: 100vh !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        bottom: 0 !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    /* Chat root - full width on mobile */
+    #acsec-chatbot-root {
+        width: 100% !important;
+    }
+
+    #acsec-chatbot-root > div {
+        width: 100% !important;
+    }
+
+    /* Ensure button positioning on mobile */
+    .acsec-chatbot-bottom-right .acsec-chatbot-button,
+    .acsec-chatbot-bottom-left .acsec-chatbot-button {
+        bottom: 20px;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    /* Textarea on mobile - Larger touch target */
+    .acsec-chatbot-textarea,
+    .acsec-chatbot-input,
+    textarea[class*="acsec"],
+    input[class*="acsec"],
+    #acsec-chatbot-app input,
+    #acsec-chatbot-app textarea {
+        padding: 14px !important;
+        font-size: 16px !important;
+        min-height: 44px;
+    }
+
+    /* Header on mobile */
+    .acsec-chatbot-header,
+    .acsec-chatbot-content header,
+    [class*="chatbot-header"] {
+        padding: 14px 12px;
+        font-size: 15px;
+    }
+
+    /* Close button on mobile */
+    .acsec-chatbot-close {
+        right: 8px;
+        top: 8px;
+        font-size: 24px;
+    }
+
+    /* Chat area padding on mobile */
+    #acsec-chatbot-app {
+        padding: 0 !important;
+    }
+
+    /* Messages on mobile - Better spacing and full width */
+    .flex.mb-4.justify-end {
+        padding: 0 8px !important;
+    }
+
+    .flex.mb-4.justify-start {
+        padding: 0 8px !important;
+    }
+
+    .flex.mb-4.justify-end > div:not([class*="rounded-full"]),
+    .flex.mb-4.justify-start > div:not([class*="rounded-full"]) {
+        max-width: 80% !important;
+        font-size: 15px !important;
+    }
+
+    /* User message on mobile */
+    .flex.mb-4.justify-end > div:not([class*="rounded-full"]) {
+        background-color: #4f46e5 !important;
+        color: #ffffff !important;
+        margin-left: auto !important;
+    }
+
+    .flex.mb-4.justify-end > div:not([class*="rounded-full"]) p,
+    .flex.mb-4.justify-end > div:not([class*="rounded-full"]) span,
+    .flex.mb-4.justify-end > div:not([class*="rounded-full"]) div {
+        color: #ffffff !important;
+    }
+
+    /* Bot message on mobile */
+    .flex.mb-4.justify-start > div:not([class*="rounded-full"]) {
+        background-color: #e5e7eb !important;
+        color: #1f2937 !important;
+        margin-right: auto !important;
+    }
+
+    .flex.mb-4.justify-start > div:not([class*="rounded-full"]) p,
+    .flex.mb-4.justify-start > div:not([class*="rounded-full"]) span,
+    .flex.mb-4.justify-start > div:not([class*="rounded-full"]) div {
+        color: #1f2937 !important;
+    }
+
+    /* Scrollable messages area on mobile */
+    .acsec-messages-scroll,
+    .acsec-chatbot-scroll,
+    [class*="scroll"],
+    main {
+        padding: 8px 0 !important;
+    }
+
+    /* Header on mobile - full width */
+    header {
+        border-radius: 0 !important;
+    }
+
+    /* Footer on mobile */
+    footer {
+        border-radius: 0 !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 100 !important;
+        flex-shrink: 0 !important;
+        box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Textarea and input container on mobile - sticky footer */
+    footer form {
+        width: 100% !important;
+    }
+
+    footer textarea,
+    footer input {
+        width: 100% !important;
+    }
+
+    /* Adjust main content area to account for fixed footer */
+    main {
+        padding-bottom: 120px !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Ensure input stays visible with keyboard */
+    textarea[class*="acsec"],
+    input[class*="acsec"],
+    #acsec-chatbot-app input,
+    #acsec-chatbot-app textarea {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        position: relative;
+        z-index: 50 !important;
+    }
+
+    /* Prevent modal from being below keyboard */
+    .acsec-chatbot-content {
+        max-height: 100vh !important;
+    }
+
+    /* Fix for iOS Safari - prevent zoom on focus */
+    @supports (padding: max(0px)) {
+        textarea[class*="acsec"],
+        input[class*="acsec"],
+        #acsec-chatbot-app input,
+        #acsec-chatbot-app textarea {
+            font-size: 16px !important;
+        }
+    }
 }

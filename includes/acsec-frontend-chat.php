@@ -30,7 +30,7 @@ function acsec_chatbot_shortcode() {
     <div id="acsec-chatbot-wrapper" class="acsec-chatbot-<?php echo esc_attr($acsec_chat_position); ?>">
         <!-- Floating Button -->
         <button id="acsec-chatbot-button" class="acsec-chatbot-button">
-            💬 <?php echo esc_html( $chatbot_title ); ?>
+            💬 <?php echo esc_html( $acsec_chatbot_title ); ?>
         </button>
 
         <!-- Modal -->
@@ -64,6 +64,9 @@ function acsec_chatbot_render_in_footer() {
 }
 add_action( 'wp_footer', 'acsec_chatbot_render_in_footer'  );
 
+// Set session cookie early, before headers are sent
+add_action( 'wp_loaded', 'acsec_set_aichat_session_cookie', 1 );
+
 function acsec_set_aichat_session_cookie() {
     $acsec_cookie_name = 'aichat_session_id';
 
@@ -77,18 +80,17 @@ function acsec_set_aichat_session_cookie() {
 
         setcookie($acsec_cookie_name, $acsec_full_id, $acsec_expire, COOKIEPATH, COOKIE_DOMAIN);
         $_COOKIE[$acsec_cookie_name] = $acsec_full_id; // Set for immediate use
-        return sanitize_text_field(  wp_unslash( $_COOKIE[ $acsec_cookie_name ])  );
     }
-    return sanitize_text_field( wp_unslash($_COOKIE[$acsec_cookie_name]) );
-
 }
 function acsec_get_aichat_session_id() {
+    // First check if cookie exists
     if (isset($_COOKIE['aichat_session_id'])) {
         // Sanitize the cookie value before using it
         return sanitize_text_field(wp_unslash($_COOKIE['aichat_session_id']) );
     }
-
-    return acsec_set_aichat_session_cookie();
+    
+    // If no cookie, return empty - it will be set by wp_loaded hook
+    return '';
 }
 
 
