@@ -241,17 +241,17 @@ input[class*="acsec"]::placeholder,
 }
 
 /* Override bg-gray-200 for bot messages */
-.bg-gray-200 {
+#acsec-chatbot-root .bg-gray-200 {
     background-color: #e5e7eb !important;
     color: #1f2937 !important;
 }
 
-.bg-gray-200 * {
+#acsec-chatbot-root .bg-gray-200 * {
     color: #1f2937 !important;
 }
 
 /* Override bg-indigo-600 for user messages */
-.bg-indigo-600 {
+#acsec-chatbot-root .bg-indigo-600 {
     background-color: #4f46e5 !important;
     color: #ffffff !important;
 }
@@ -261,26 +261,26 @@ input[class*="acsec"]::placeholder,
 }
 
 /* Override text colors inside messages */
-.text-gray-800 {
+#acsec-chatbot-root .text-gray-800 {
     color: #1f2937 !important;
 }
 
-.text-white {
+#acsec-chatbot-root .text-white {
     color: #ffffff !important;
 }
 
 /* Message wrapper - Clean background */
-.acsec-message-wrapper,
-[class*="message-wrapper"],
-#acsec-chatbot-app [class*="wrapper"] {
+#acsec-chatbot-root .acsec-message-wrapper,
+#acsec-chatbot-root [class*="message-wrapper"],
+#acsec-chatbot-root [class*="wrapper"] {
     background-color: #ffffff !important;
 }
 
 /* Scrollable messages area */
 .acsec-messages-scroll,
 .acsec-chatbot-scroll,
-[class*="scroll"],
-main {
+#acsec-chatbot-root [class*="scroll"],
+#acsec-chatbot-root main {
     background-color: #ffffff !important;
     overflow-y: auto;
     overflow-x: hidden;
@@ -396,17 +396,17 @@ main {
     .acsec-messages-scroll,
     .acsec-chatbot-scroll,
     [class*="scroll"],
-    main {
+    #acsec-chatbot-root main {
         padding: 8px 0 !important;
     }
 
     /* Header on mobile - full width */
-    header {
+    #acsec-chatbot-root header {
         border-radius: 0 !important;
     }
 
     /* Footer on mobile */
-    footer {
+    #acsec-chatbot-root footer {
         border-radius: 0 !important;
         position: fixed !important;
         bottom: 0 !important;
@@ -419,24 +419,24 @@ main {
     }
 
     /* Textarea and input container on mobile - sticky footer */
-    footer form {
+    #acsec-chatbot-root footer form {
         width: 100% !important;
     }
 
-    footer textarea,
+    #acsec-chatbot-root footer textarea,
     footer input {
         width: 100% !important;
     }
 
     /* Adjust main content area to account for fixed footer */
-    main {
+    #acsec-chatbot-root main {
         padding-bottom: 120px !important;
         margin-bottom: 0 !important;
     }
 
     /* Ensure input stays visible with keyboard */
-    textarea[class*="acsec"],
-    input[class*="acsec"],
+    #acsec-chatbot-root textarea[class*="acsec"],
+    #acsec-chatbot-root input[class*="acsec"],
     #acsec-chatbot-app input,
     #acsec-chatbot-app textarea {
         -webkit-appearance: none !important;
@@ -452,8 +452,8 @@ main {
 
     /* Fix for iOS Safari - prevent zoom on focus */
     @supports (padding: max(0px)) {
-        textarea[class*="acsec"],
-        input[class*="acsec"],
+       #acsec-chatbot-root textarea[class*="acsec"],
+       #acsec-chatbot-root input[class*="acsec"],
         #acsec-chatbot-app input,
         #acsec-chatbot-app textarea {
             font-size: 16px !important;
